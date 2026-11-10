@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbf9f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131011" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Paulo Gonçalves · Senior Software Engineer">
+<meta property="og:description" content="Senior Software Engineer building web platforms for agentic AI, e-commerce, health tech and fintech.">
+<meta property="og:url" content="https://paulojsgg.github.io/">
+<meta property="og:image" content="https://paulojsgg.github.io/photo.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://paulojsgg.github.io/">
+<link rel="icon" href="photo.jpg">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<title>Paulo Gonçalves</title>
+<meta name="description" content="Senior Software Engineer building web platforms for agentic AI, e-commerce, health tech and fintech.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a business card at real 85 × 55 mm proportions opens the page; the CV reads below it on phones, and beside it (card pinned) on wide screens. */
+:root {
+  --bg: #fbf9f9;
+  --surface: #ffffff;
+  --ink: #1c1618;
+  --muted: #6b6164;
+  --line: #ebe3e5;
+  --accent: #be123c;
+  --accent-ink: #9f1239;
+  --accent-soft: #fdeaee;
+  --card-a: #a3133b;
+  --card-b: #6a0c28;
+  --card-fg: #fff6f7;
+  --card-dim: rgba(255, 246, 247, 0.74);
+  --card-rings: rgba(255, 255, 255, 0.07);
+  --card-sheen: rgba(255, 255, 255, 0.18);
+  --qr-fg: #1c1618;
+  --qr-bg: #ffffff;
+  --backdrop: rgba(28, 22, 24, 0.55);
+  --shadow-card: 0 1px 2px rgba(80, 12, 32, 0.08), 0 18px 40px -18px rgba(80, 12, 32, 0.55);
+  --shadow-sheet: 0 30px 80px -24px rgba(28, 6, 14, 0.45);
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131011;
+    --surface: #1b1719;
+    --ink: #f4eef0;
+    --muted: #a59a9e;
+    --line: #2c2528;
+    --accent: #fb7185;
+    --accent-ink: #fda4af;
+    --accent-soft: #3a1521;
+    --card-a: #8c1233;
+    --card-b: #4a0a1d;
+    --backdrop: rgba(0, 0, 0, 0.7);
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 22px 44px -20px rgba(0, 0, 0, 0.9);
+    --shadow-sheet: 0 30px 80px -24px rgba(0, 0, 0, 0.9);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131011;
+  --surface: #1b1719;
+  --ink: #f4eef0;
+  --muted: #a59a9e;
+  --line: #2c2528;
+  --accent: #fb7185;
+  --accent-ink: #fda4af;
+  --accent-soft: #3a1521;
+  --card-a: #8c1233;
+  --card-b: #4a0a1d;
+  --backdrop: rgba(0, 0, 0, 0.7);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 22px 44px -20px rgba(0, 0, 0, 0.9);
+  --shadow-sheet: 0 30px 80px -24px rgba(0, 0, 0, 0.9);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1rem/1.6 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; }
+button { font: inherit; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.icon {
+  width: 18px; height: 18px; flex: none;
+  fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Page frame */
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: clamp(20px, 5vw, 56px) 40px;
+}
+.layout { display: grid; gap: 44px; max-width: 640px; margin: 0 auto; }
+.aside { display: grid; gap: 14px; width: 100%; max-width: 440px; }
+.main { display: grid; gap: 52px; min-width: 0; }
+@media (min-width: 980px) {
+  .layout {
+    max-width: none;
+    grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+    gap: clamp(48px, 6vw, 88px);
+    align-items: start;
+  }
+  .aside { position: sticky; top: calc(40px + env(safe-area-inset-top, 0px)); }
+  .main { max-width: 640px; padding-top: 4px; }
+}
+
+/* Business card */
+.card-wrap { container-type: inline-size; perspective: 1000px; }
+.card {
+  position: relative;
+  aspect-ratio: 85 / 55;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: clamp(16px, 6cqi, 28px);
+  border-radius: clamp(10px, 3.6cqi, 16px);
+  color: var(--card-fg);
+  background:
+    repeating-radial-gradient(circle at 108% -12%, var(--card-rings) 0 1px, transparent 1px 13px),
+    linear-gradient(140deg, var(--card-a), var(--card-b));
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.card.is-tilting { transition: transform 0.08s linear; }
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--mx, 20%) var(--my, 0%), var(--card-sheen), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.card.is-tilting::after { opacity: 1; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.card-id { display: grid; gap: clamp(8px, 3cqi, 14px); min-width: 0; }
+.card-photo {
+  flex: none;
+  width: clamp(52px, 19cqi, 84px);
+  height: auto;
+  aspect-ratio: 1;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--card-dim);
+}
+.card-role {
+  font: 600 clamp(0.625rem, 2.7cqi, 0.75rem)/1.2 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--card-dim);
+}
+.card-name {
+  font: 800 clamp(1.85rem, 11.5cqi, 2.9rem)/0.95 var(--font-display);
+  letter-spacing: -0.025em;
+}
+.card-name span { display: block; }
+.card-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; position: relative; z-index: 1; }
+.card-meta {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  font: 500 clamp(0.6875rem, 2.9cqi, 0.8125rem)/1.35 var(--font-mono);
+  color: var(--card-dim);
+}
+.card-qr {
+  flex: none;
+  width: clamp(48px, 17cqi, 72px);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: clamp(6px, 2.2cqi, 10px);
+  background: var(--qr-bg);
+  color: var(--qr-fg);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.card-qr:hover { transform: scale(1.05); }
+.card-qr svg.qr { display: block; width: 100%; height: 100%; }
+
+/* Contact list */
+.contact { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); overflow: hidden; }
+.contact li + li { border-top: 1px solid var(--line); }
+.contact-row {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 10px 14px;
+  color: var(--ink);
+  text-decoration: none;
+}
+a.contact-row { transition: background 0.2s; }
+a.contact-row:hover { background: color-mix(in srgb, var(--accent-soft) 55%, var(--surface)); }
+.contact-row > .icon:first-child { color: var(--muted); }
+.contact-value { min-width: 0; font-size: 0.9375rem; overflow-wrap: anywhere; text-decoration: none; }
+a.contact-value:hover { text-decoration: underline; text-underline-offset: 3px; }
+.contact-go { width: 16px; height: 16px; color: var(--muted); }
+.copy-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font: 600 0.75rem/1 var(--font-body);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--ink);
+  color: var(--bg);
+  font: 600 0.9375rem/1 var(--font-body);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: color-mix(in srgb, var(--ink) 86%, var(--accent)); }
+.btn-primary:active { transform: scale(0.99); }
+
+/* Sections */
+.section { display: grid; gap: 18px; min-width: 0; }
+.section h2 { font: 700 1.375rem/1.2 var(--font-display); letter-spacing: -0.015em; text-wrap: balance; }
+.tagline { font: 500 0.875rem/1.5 var(--font-body); color: var(--accent-ink); }
+.lede { max-width: 62ch; font-size: 1.0625rem; line-height: 1.65; }
+
+/* Career strip, drawn to scale: 09/2017 to 05/2026 is 104 months */
+.career { display: grid; gap: 8px; }
+.career-bar { position: relative; height: 10px; }
+.seg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--l);
+  width: calc(var(--w) - 3px);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--accent) var(--k), var(--line));
+  transition: background 0.2s;
+}
+.seg:last-child { width: var(--w); }
+.seg:hover, .seg:focus-visible { --k: 100%; }
+.career-axis { position: relative; height: 16px; font-size: 0.6875rem; line-height: 16px; color: var(--muted); }
+.career-axis span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.career-axis span.tick::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  width: 1px;
+  height: 4px;
+  background: var(--muted);
+}
+.career-axis .start { transform: none; }
+.career-axis .end { transform: translateX(-100%); }
+
+/* Jobs */
+.job { display: grid; gap: 6px; padding-block: 22px; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
+.job:first-child { border-top: 0; padding-top: 6px; }
+.job:last-child { padding-bottom: 0; }
+.job-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 16px; }
+.job-company { font: 700 1.125rem/1.3 var(--font-display); letter-spacing: -0.01em; transition: color 0.3s; }
+.job:target .job-company { color: var(--accent-ink); }
+.job-dates { font-size: 0.8125rem; color: var(--muted); white-space: nowrap; }
+.job-role { font-size: 0.9375rem; color: var(--muted); }
+.job-points { display: grid; gap: 6px; margin-top: 6px; }
+.job-points li { position: relative; max-width: 64ch; padding-left: 18px; font-size: 0.9375rem; line-height: 1.6; }
+.job-points li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.78em;
+  width: 7px;
+  height: 1.5px;
+  border-radius: 1px;
+  background: var(--accent);
+}
+.job-stack { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin-top: 8px; }
+.stack-label { font: 600 0.6875rem/1 var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.job-stack .mono { font-size: 0.8125rem; color: var(--ink); }
+
+/* Skills */
+.skill-groups { display: grid; gap: 16px; }
+.skill-group { display: grid; gap: 8px; }
+@media (min-width: 600px) {
+  .skill-group { grid-template-columns: 124px minmax(0, 1fr); gap: 16px; align-items: baseline; }
+}
+.skill-group h3 { font: 600 0.75rem/1.6 var(--font-body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
+.chips li {
+  max-width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  font-size: 0.8125rem;
+  line-height: 1.25;
+}
+.chips-ai li { border-color: transparent; background: var(--accent-soft); color: var(--accent-ink); font-weight: 500; }
+
+/* Projects */
+.projects { display: grid; gap: 12px; }
+@media (min-width: 600px) { .projects { grid-template-columns: 1fr 1fr; } }
+.project {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.project:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); transform: translateY(-1px); }
+.project-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font: 500 0.9375rem/1.3 var(--font-mono);
+  overflow-wrap: anywhere;
+}
+.project-name .icon { width: 16px; height: 16px; color: var(--muted); }
+.project-desc { font-size: 0.875rem; line-height: 1.55; color: var(--muted); }
+
+/* Education + languages */
+.pair { display: grid; gap: 52px; }
+@media (min-width: 600px) { .pair { grid-template-columns: 1fr 1fr; gap: 32px; } }
+.edu { display: grid; gap: 2px; }
+.edu-title { font: 700 1.0625rem/1.35 var(--font-display); }
+.edu-meta { font-size: 0.9375rem; color: var(--muted); }
+.edu-dates { margin-top: 4px; font-size: 0.8125rem; color: var(--muted); }
+.langs { display: grid; gap: 8px; }
+.langs li { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 8px; border-bottom: 1px dashed var(--line); font-size: 0.9375rem; }
+.langs span { color: var(--muted); }
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+/* Share sheet */
+.share {
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  overflow: visible;
+}
+.share::backdrop { background: var(--backdrop); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.sheet {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  width: min(360px, calc(100vw - 32px));
+  padding: 28px 22px 22px;
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sheet);
+  text-align: center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .share[open] .sheet { animation: pop 0.22s ease-out; }
+}
+@keyframes pop { from { transform: scale(0.96); opacity: 0; } }
+.sheet h2 { font: 700 1.25rem/1.2 var(--font-display); letter-spacing: -0.01em; }
+.sheet-hint { max-width: 28ch; font-size: 0.875rem; color: var(--muted); }
+.qr-big { width: 100%; max-width: 280px; aspect-ratio: 1; border-radius: 16px; overflow: hidden; background: var(--qr-bg); }
+.qr-big svg { display: block; width: 100%; height: 100%; }
+.share-url { font: 500 0.875rem/1.4 var(--font-mono); overflow-wrap: anywhere; user-select: all; -webkit-user-select: all; }
+.sheet-actions { display: flex; gap: 8px; width: 100%; }
+.btn-secondary {
+  flex: 1;
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  font: 600 0.875rem/1 var(--font-body);
+  cursor: pointer;
+}
+.btn-secondary.is-solid { border-color: transparent; background: var(--ink); color: var(--bg); }
+.sheet-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.qr .qr-bg { fill: var(--qr-bg); }
+.qr .qr-fg { fill: var(--qr-fg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .card::after, .card-qr, .project, .seg, .btn-primary { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+</svg>
+
+<div class="page">
+  <div class="layout">
+    <aside class="aside" aria-label="Contact">
+      <div class="card-wrap">
+        <section class="card" aria-label="Business card">
+          <div class="card-top">
+            <div class="card-id">
+              <p class="card-role">Senior Software Engineer</p>
+              <h1 class="card-name"><span>Paulo</span> <span>Gonçalves</span></h1>
+            </div>
+            <img class="card-photo" src="photo.jpg" width="480" height="480" alt="Portrait of Paulo Gonçalves">
+          </div>
+          <div class="card-foot">
+            <p class="card-meta"><span>Albufeira, Portugal</span><span>paulojsgg.github.io</span></p>
+            <button type="button" class="card-qr" data-open-share aria-label="Show QR code">
+              <svg class="icon" aria-hidden="true"><use href="#i-qr"/></svg>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <ul class="contact">
+        <li class="contact-row">
+          <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+          <a class="contact-value" id="email-text" href="mailto:PauloJSGG@gmail.com">PauloJSGG@gmail.com</a>
+          <button type="button" class="copy-btn" id="copy-email" aria-label="Copy email address">Copy</button>
+        </li>
+        <li>
+          <a class="contact-row" href="https://linkedin.com/in/PauloJSGG" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+            <span class="contact-value">linkedin.com/in/PauloJSGG</span>
+            <svg class="icon contact-go" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="contact-row" href="https://github.com/PauloJSGG" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+            <span class="contact-value">github.com/PauloJSGG</span>
+            <svg class="icon contact-go" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </li>
+      </ul>
+
+      <button type="button" class="btn-primary" data-open-share>
+        <svg class="icon" aria-hidden="true"><use href="#i-qr"/></svg>
+        Show QR code
+      </button>
+    </aside>
+
+    <main class="main">
+      <section class="section" aria-labelledby="about-h">
+        <h2 id="about-h">About</h2>
+        <p class="tagline">Agentic chats · E-commerce · Health Tech · Fintech · Cloud Technologies</p>
+        <p class="lede">Senior Software Engineer with 9+ years of experience building web platforms for agentic AI, e-commerce, health tech and fintech companies. Specialized in React, Next.js, TypeScript and Node.js, with production experience in Ruby on Rails, design systems and cloud platforms such as AWS and Google Cloud. Enjoys mastering new technologies and taking on hard problems.</p>
+      </section>
+
+      <section class="section" aria-labelledby="exp-h">
+        <h2 id="exp-h">Experience</h2>
+
+        <div class="career">
+          <div class="career-bar">
+            <a class="seg" href="#job-deco" style="--l:0%;--w:18.269%;--k:28%" title="Deco Proteste · 09/2017 – 04/2019" aria-label="Deco Proteste, 09/2017 to 04/2019"></a>
+            <a class="seg" href="#job-icapital" style="--l:18.269%;--w:16.346%;--k:40%" title="iCapital · 04/2019 – 09/2020" aria-label="iCapital, 04/2019 to 09/2020"></a>
+            <a class="seg" href="#job-acg" style="--l:34.615%;--w:11.538%;--k:52%" title="Art curator grid · 09/2020 – 09/2021" aria-label="Art curator grid, 09/2020 to 09/2021"></a>
+            <a class="seg" href="#job-truepill" style="--l:46.154%;--w:13.462%;--k:64%" title="Truepill · 09/2021 – 11/2022" aria-label="Truepill, 09/2021 to 11/2022"></a>
+            <a class="seg" href="#job-promptus" style="--l:59.615%;--w:12.5%;--k:78%" title="Promptus GmbH · 11/2022 – 12/2023" aria-label="Promptus GmbH, 11/2022 to 12/2023"></a>
+            <a class="seg" href="#job-noxtua" style="--l:73.077%;--w:26.923%;--k:100%" title="Noxtua AI · 01/2024 – 05/2026" aria-label="Noxtua AI, 01/2024 to 05/2026"></a>
+          </div>
+          <div class="career-axis mono" aria-hidden="true">
+            <span class="start" style="left:0">09/2017</span>
+            <span class="tick" style="left:26.923%">2020</span>
+            <span class="tick" style="left:50%">2022</span>
+            <span class="tick" style="left:73.077%">2024</span>
+            <span class="end" style="left:100%">05/2026</span>
+          </div>
+        </div>
+
+        <div class="jobs">
+          <article class="job" id="job-noxtua">
+            <div class="job-head">
+              <h3 class="job-company">Noxtua AI</h3>
+              <p class="job-dates mono">01/2024 – 05/2026</p>
+            </div>
+            <p class="job-role">Senior Software Engineer · Berlin, Germany (remote)</p>
+            <ul class="job-points">
+              <li>Built intuitive, polished UI for the company's agentic AI chat platform, contributing to the product growth that helped raise almost 90M in funding</li>
+              <li>Developed product features with Remix and Next.js following server-side rendering (SSR) best practices</li>
+              <li>Designed and maintained a scalable design system using Tailwind CSS, Motion, Storybook, and a monorepo architecture</li>
+            </ul>
+            <p class="job-stack"><span class="stack-label">Stack</span><span class="mono">Remix · Next.js · Tailwind CSS · Motion · Storybook</span></p>
+          </article>
+
+          <article class="job" id="job-promptus">
+            <div class="job-head">
+              <h3 class="job-company">Promptus GmbH</h3>
+              <p class="job-dates mono">11/2022 – 12/2023</p>
+            </div>
+            <p class="job-role">Senior Software Engineer · Remote</p>
+            <ul class="job-points">
+              <li>Built and extended major features for the kemmler.de e-commerce platform</li>
+              <li>Delivered robust code with a strong focus on unit and integration testing</li>
+            </ul>
+            <p class="job-stack"><span class="stack-label">Stack</span><span class="mono">Ruby on Rails · React · Redux · Nginx · Docker · Ansible</span></p>
+          </article>
+
+          <article class="job" id="job-truepill">
+            <div class="job-head">
+              <h3 class="job-company">Truepill</h3>
+              <p class="job-dates mono">09/2021 – 11/2022</p>
+            </div>
+            <p class="job-role">Senior Software Engineer · Remote</p>
+            <ul class="job-points">
+              <li>Developed features for regulated healthcare technology, working within secure digital workflows</li>
+            </ul>
+            <p class="job-stack"><span class="stack-label">Stack</span><span class="mono">Node.js · React · NestJS · Gatsby · Google Cloud</span></p>
+          </article>
+
+          <article class="job" id="job-acg">
+            <div class="job-head">
+              <h3 class="job-company">Art curator grid</h3>
+              <p class="job-dates mono">09/2020 – 09/2021</p>
+            </div>
+            <p class="job-role">Software Engineer · Remote</p>
+            <ul class="job-points">
+              <li>Created a social network for art curators and artists</li>
+            </ul>
+            <p class="job-stack"><span class="stack-label">Stack</span><span class="mono">React · Node.js · MongoDB · AWS</span></p>
+          </article>
+
+          <article class="job" id="job-icapital">
+            <div class="job-head">
+              <h3 class="job-company">iCapital</h3>
+              <p class="job-dates mono">04/2019 – 09/2020</p>
+            </div>
+            <p class="job-role">Software Engineer · Lisbon, Portugal</p>
+            <ul class="job-points">
+              <li>Engineered features as part of the core team for iCapital Network's main platform, giving financial advisors and their clients secure online access to alternative investment funds</li>
+              <li>Contributed to simplifying the bureaucratic processes involved in alternative investments</li>
+              <li>Developed back-office dashboard pages that business managers use to analyze key business data</li>
+            </ul>
+            <p class="job-stack"><span class="stack-label">Stack</span><span class="mono">React · Redux · Ruby on Rails · AngularJS · PostgreSQL</span></p>
+          </article>
+
+          <article class="job" id="job-deco">
+            <div class="job-head">
+              <h3 class="job-company">Deco Proteste</h3>
+              <p class="job-dates mono">09/2017 – 04/2019</p>
+            </div>
+            <p class="job-role">Software Engineer · Lisbon, Portugal</p>
+            <ul class="job-points">
+              <li>Built online calculators that simulate insurance, credit and other financial products</li>
+              <li>Developed multiple web services to integrate with partner systems</li>
+              <li>Collaborated with a wide range of business stakeholders and clients</li>
+            </ul>
+            <p class="job-stack"><span class="stack-label">Stack</span><span class="mono">.NET · Sitecore · Angular · SQL</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="skills-h">
+        <h2 id="skills-h">Skills</h2>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <ul class="chips">
+              <li>React</li><li>Next.js</li><li>Remix</li><li>React Router</li><li>TypeScript</li><li>Redux</li>
+              <li>Tailwind CSS</li><li>Storybook</li><li>Astro</li><li>Gatsby</li><li>Angular</li><li>AngularJS</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Backend</h3>
+            <ul class="chips">
+              <li>Node.js</li><li>NestJS</li><li>Ruby on Rails</li><li>.NET</li><li>Sitecore</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Cloud &amp; DevOps</h3>
+            <ul class="chips">
+              <li>AWS</li><li>Google Cloud</li><li>Firebase</li><li>Docker</li><li>Nginx</li><li>Ansible</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Databases</h3>
+            <ul class="chips">
+              <li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>SQL</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>AI tooling</h3>
+            <ul class="chips chips-ai">
+              <li>Claude Code</li><li>Cursor</li><li>Agentic Coding Workflows</li><li>MCP Servers (Model Context Protocol)</li>
+              <li>Agent Skills</li><li>Cursor Rules</li><li>CLAUDE.md / AGENTS.md</li><li>Prompt Engineering</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="projects-h">
+        <h2 id="projects-h">Projects</h2>
+        <div class="projects">
+          <a class="project" href="https://algarvianroots.com" target="_blank" rel="noopener">
+            <span class="project-name">algarvianroots.com <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            <span class="project-desc">Created the whole website from scratch using Next.js, Tailwind CSS and Firebase, later migrated to Astro.</span>
+          </a>
+          <a class="project" href="https://peakybarberscarvoeiro.pt" target="_blank" rel="noopener">
+            <span class="project-name">peakybarberscarvoeiro.pt <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            <span class="project-desc">Mobile-first booking web app for a barbershop, built with React Router and Firebase.</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="pair">
+        <section class="section" aria-labelledby="edu-h">
+          <h2 id="edu-h">Education</h2>
+          <div class="edu">
+            <p class="edu-title">Computer Engineering</p>
+            <p class="edu-meta">Universidade do Algarve</p>
+            <p class="edu-dates mono">2013 – 2016</p>
+          </div>
+        </section>
+        <section class="section" aria-labelledby="lang-h">
+          <h2 id="lang-h">Languages</h2>
+          <ul class="langs">
+            <li>English <span>Native</span></li>
+            <li>Portuguese <span>Native</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <footer class="foot">
+        <span class="mono">paulojsgg.github.io</span>
+        <span>Updated November 2026</span>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<dialog id="share" class="share" aria-labelledby="share-title">
+  <div class="sheet">
+    <button type="button" class="sheet-close" data-close-share aria-label="Close">
+      <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
+    </button>
+    <h2 id="share-title">Paulo Gonçalves</h2>
+    <p class="sheet-hint" id="share-hint">Point your phone camera at the code to open this page.</p>
+    <div class="qr-big" id="qr-big"></div>
+    <p class="share-url" id="share-url">paulojsgg.github.io</p>
+    <div class="sheet-actions">
+      <button type="button" class="btn-secondary" id="copy-link">Copy link</button>
+      <button type="button" class="btn-secondary is-solid" data-close-share>Done</button>
+    </div>
+  </div>
+</dialog>
+<p id="live" class="sr" aria-live="polite"></p>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script>
+(() => {
+  // The address the QR code opens. Change this if the page moves to another domain.
+  const SITE_URL = "https://paulojsgg.github.io/";
+  const EMAIL = "PauloJSGG@gmail.com";
+  const live = document.getElementById("live");
+
+  function qrSvg(text, quiet, label) {
+    if (typeof window.qrcode !== "function") return "";
+    try {
+      const qr = window.qrcode(0, "M");
+      qr.addData(text);
+      qr.make();
+      const n = qr.getModuleCount();
+      let d = "";
+      for (let r = 0; r < n; r++) {
+        for (let c = 0; c < n; c++) {
+          if (qr.isDark(r, c)) d += `M${c} ${r}h1v1h-1z`;
+        }
+      }
+      const size = n + quiet * 2;
+      const a11y = label ? `role="img" aria-label="${label}"` : `aria-hidden="true"`;
+      return `<svg class="qr" viewBox="${-quiet} ${-quiet} ${size} ${size}" ${a11y} shape-rendering="crispEdges">` +
+        `<rect class="qr-bg" x="${-quiet}" y="${-quiet}" width="${size}" height="${size}"/>` +
+        `<path class="qr-fg" d="${d}"/></svg>`;
+    } catch (err) {
+      return "";
+    }
+  }
+
+  // QR codes: a small one on the card, a large one in the share sheet.
+  const mini = document.querySelector(".card-qr");
+  const big = document.getElementById("qr-big");
+  const miniSvg = qrSvg(SITE_URL, 2, "");
+  if (miniSvg) mini.innerHTML = miniSvg;
+  const bigSvg = qrSvg(SITE_URL, 4, `QR code that opens ${SITE_URL}`);
+  if (bigSvg) {
+    big.innerHTML = bigSvg;
+  } else {
+    big.hidden = true;
+    document.getElementById("share-hint").textContent = "Share this link to open the page:";
+  }
+
+  // Copy buttons, with a select-the-text fallback where the clipboard is blocked.
+  function selectText(el) {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+  function copy(text, btn, fallbackEl) {
+    if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+    const show = (msg, announce) => {
+      btn.textContent = msg;
+      live.textContent = announce;
+      clearTimeout(btn._reset);
+      btn._reset = setTimeout(() => { btn.textContent = btn.dataset.label; }, 1800);
+    };
+    const fallback = () => {
+      selectText(fallbackEl);
+      show("Selected", "Text selected. Copy it from your keyboard or menu.");
+    };
+    try {
+      navigator.clipboard.writeText(text).then(() => show("Copied", "Copied to clipboard."), fallback);
+    } catch (err) {
+      fallback();
+    }
+  }
+  const emailBtn = document.getElementById("copy-email");
+  emailBtn.addEventListener("click", () => copy(EMAIL, emailBtn, document.getElementById("email-text")));
+  const linkBtn = document.getElementById("copy-link");
+  linkBtn.addEventListener("click", () => copy(SITE_URL, linkBtn, document.getElementById("share-url")));
+
+  // Share sheet. Keeps the screen awake while it is open so the code stays scannable.
+  const dialog = document.getElementById("share");
+  let wakeLock = null;
+  function openShare() {
+    if (!dialog.open) dialog.showModal();
+    try {
+      if (navigator.wakeLock) {
+        navigator.wakeLock.request("screen").then((lock) => { wakeLock = lock; }, () => {});
+      }
+    } catch (err) { /* not available here */ }
+  }
+  dialog.addEventListener("close", () => {
+    if (wakeLock) wakeLock.release().catch(() => {});
+    wakeLock = null;
+  });
+  dialog.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });
+  document.querySelectorAll("[data-open-share]").forEach((b) => b.addEventListener("click", openShare));
+  document.querySelectorAll("[data-close-share]").forEach((b) => b.addEventListener("click", () => dialog.close()));
+
+  // Card tilt on desktop pointers, like turning a real card in the light.
+  const wrap = document.querySelector(".card-wrap");
+  const card = document.querySelector(".card");
+  const fine = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)");
+  wrap.addEventListener("pointermove", (e) => {
+    if (!fine.matches || still.matches) return;
+    const r = wrap.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width;
+    const y = (e.clientY - r.top) / r.height;
+    card.classList.add("is-tilting");
+    card.style.setProperty("--rx", `${((0.5 - y) * 9).toFixed(2)}deg`);
+    card.style.setProperty("--ry", `${((x - 0.5) * 12).toFixed(2)}deg`);
+    card.style.setProperty("--mx", `${(x * 100).toFixed(1)}%`);
+    card.style.setProperty("--my", `${(y * 100).toFixed(1)}%`);
+  });
+  wrap.addEventListener("pointerleave", () => {
+    card.classList.remove("is-tilting");
+    card.style.setProperty("--rx", "0deg");
+    card.style.setProperty("--ry", "0deg");
+  });
+})();
+</script>
+</body>
+</html>
